@@ -7,7 +7,7 @@ The codes are based on implementation of Mask R-CNN by (https://github.com/matte
 The repository includes:
 
 - Source code of Mask R-CNN built on FPN and ResNet101.
-- Instruction and training code for the surgery robot dataset.
+- Instruction and training code for the BangladeshiFoodData dataset.
 - Pre-trained weights on MS COCO and ImageNet.
 - Example of training on your own dataset, with emphasize on how to build and adapt codes to dataset with multiple classes.
 - Jupyter notebooks to visualize the detection result.
@@ -16,10 +16,10 @@ The repository includes:
 
 Pre-trained weights from MS COCO and ImageNet are provided for you to fine-tune over new dataset. 
 
-In summary, to train the model you need to modify two classes in `surgery.py`:
+In summary, to train the model you need to modify two classes in `food.py`:
 
-1. `SurgeryConfig` This class contains the default configurations. Modify the attributes for your training, most importantly the NUM_CLASSES.
-2. 'SurgeryDataset' This class inherits from utils.Dataset which provides capability to train on new dataset without modifying the model. In this project I will demonstrate with a dataset labeled by VGG Image Annotation(VIA). If you are also trying to label a dataset for your own images, start by reading this blog post about the [balloon color splash sample](https://engineering.matterport.com/splash-of-color-instance-segmentation-with-mask-r-cnn-and-tensorflow-7c761e238b46/) . First of all, for training you need to add class in function load_VIA
+1. `FoodConfig` This class contains the default configurations. Modify the attributes for your training, most importantly the NUM_CLASSES.
+2. 'FoodDataset' This class inherits from utils.Dataset which provides capability to train on new dataset without modifying the model. In this project I will demonstrate with a dataset labeled by VGG Image Annotation(VIA). If you are also trying to label a dataset for your own images, start by reading this blog post about the [balloon color splash sample](https://engineering.matterport.com/splash-of-color-instance-segmentation-with-mask-r-cnn-and-tensorflow-7c761e238b46/) . First of all, for training you need to add class in function load_VIA
 
 ```
 self.add_class("SourceName", ClassID, "ClassName")
@@ -27,7 +27,7 @@ self.add_class("SourceName", ClassID, "ClassName")
 self.add_class("food", 1, "beef")  #means add a class named "beef" with class_id "1" from source "food"
 ......
 ```
-Then extend function `load_mask` for reading different class names from annotations For example, if you assign name "a" to class "arm" when you are labelling, according to its class_id defined in `load_VIA`
+Then extend function `load_mask` for reading different class names from annotations For example, if you assign name "a" to class "beef" when you are labelling, according to its class_id defined in `load_VIA`
 
 ```
 class_ids = np.zeros([len(info["polygons"])])
@@ -37,18 +37,18 @@ for i, p in enumerate(class_names):
       ......
 ```
 
-Now you should be able to start training on your own dataset! Training parapeters are mainly included in function `train` in `surgery.py`.
+Now you should be able to start training on your own dataset! Training parapeters are mainly included in function `train` in `food.py`.
 
 ```
 #Train a new model starting from pre-trained COCO weights
-python surgery.py train --dataset=/home/.../mask_rcnn/data/surgery/ --weights=coco  
+python food.py train --dataset=/home/.../mask_rcnn/samples/food/data/ --weights=coco 
 
 #Train a new model starting from pre-trained ImageNet weights
-python surgery.py train --dataset=/home/.../mask_rcnn/data/surgery/ --weights=imagenet
+python surgery.py train --dataset=/home/.../mask_rcnn/samples/food/data/ --weights=imagenet
 
 # Continue training the last model you trained. This will find
 # the last trained weights in the model directory.
-python surgery.py train --dataset=/home/.../mask_rcnn/data/surgery/ --weights=last
+python surgery.py train --dataset=/home/.../mask_rcnn/samples/food/data/ --weights=last
 ```
 
 # Prediction, Visualization, Evaluation
@@ -63,7 +63,7 @@ You can make prediction on a specific image, images in a specific directory or e
 ```
 #Detect and color splash on a image with the last model you trained.
 #This will find the last trained weights in the model directory.
-python surgery.py splash --weights=last --image=/home/...../*.jpg
+python food.py splash --weights=last --image=/home/...../*.jpg
 ```
 `prediction.ipynb` provides step-by-step prediction and visualization on your own dataset. You can also roughly evaluate the model with metrics of overall accuracy and precision.
 
