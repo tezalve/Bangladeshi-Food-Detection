@@ -82,7 +82,8 @@ Anaconda + Python 3.7.3, TensorFlow 1.13.1, Keras 2.3.1, CUDA 10.0, cudnn 7.6.4 
 
 1. Install dependencies
 `pip install -r requirementsgpu.txt`
-Or `conda install -r requirementsgpu.txt` should also work. 
+Or 
+`conda install -r requirementsgpu.txt` 
 2. Clone this repository
 3. Run setup from the repository root directory
 `python setup.py install`
