@@ -52,7 +52,7 @@ python surgery.py train --dataset=/home/.../mask_rcnn/samples/food/data/ --weigh
 ```
 
 # Prediction, Visualization, Evaluation
-Function `detect_and_color_splash` in `surgery.py` are provided in this project. To use `detect_and_color_splash`, you need to add class_names according to your dataset
+Function `detect_and_color_splash` in `food.py` are provided in this project. To use `detect_and_color_splash`, you need to add class_names according to your dataset
 
 ```
 class_names = ['BG', 'beef', 'chicken']
