@@ -73,3 +73,17 @@ The model is trained based on pre-trained weights for MS COCO.
 ![test1](https://github.com/tezalve/Bangladeshi-Food-Detection/blob/master/assets/17.PNG)
 ![test2](https://github.com/tezalve/Bangladeshi-Food-Detection/blob/master/assets/22.PNG)
 ![test3](https://github.com/tezalve/Bangladeshi-Food-Detection/blob/master/assets/8.PNG)
+
+# Configurations
+
+Anaconda + Python 3.7.3, TensorFlow 1.13.1, Keras 2.3.1, CUDA 10.0, cudnn 7.6.4 and other common packages listed in `requirementsgpu.txt`.
+
+# Installation
+
+1. Install dependencies
+`pip install -r requirementsgpu.txt`
+Or `conda install -r requirementsgpu.txt` should also work. 
+2. Clone this repository
+3. Run setup from the repository root directory
+`python setup.py install`
+4. The code will automatically download pretrained COCO weights when you select training with COCO weights. But in case it somehow doesn't work, download pre-trained COCO weights (mask_rcnn_coco.h5) from the releases page.
