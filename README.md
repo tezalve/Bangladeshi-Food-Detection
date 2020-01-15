@@ -70,4 +70,6 @@ python food.py splash --weights=last --image=/home/...../*.jpg
 # Instance Segmentation Samples on BangladeshiFoodData Dataset
 
 The model is trained based on pre-trained weights for MS COCO.
-![test](https://github.com/tezalve/Bangladeshi-Food-Detection/blob/master/assets/17.PNG)
+![test1](https://github.com/tezalve/Bangladeshi-Food-Detection/blob/master/assets/17.PNG)
+![test2](https://github.com/tezalve/Bangladeshi-Food-Detection/blob/master/assets/22.PNG)
+![test3](https://github.com/tezalve/Bangladeshi-Food-Detection/blob/master/assets/8.PNG)
