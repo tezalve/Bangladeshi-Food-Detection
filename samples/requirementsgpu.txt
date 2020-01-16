@@ -1,0 +1,16 @@
+numpy
+scipy
+Pillow
+cython
+matplotlib
+scikit-image
+tensorflow-gpu
+tensorflow-estimator
+keras
+cudatoolkit
+cudnn
+opencv
+h5py
+imgaug
+Ipykernel
+IPython[all]
