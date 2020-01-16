@@ -44,11 +44,11 @@ Now you should be able to start training on your own dataset! Training parapeter
 python food.py train --dataset=/home/.../mask_rcnn/samples/food/data/ --weights=coco 
 
 #Train a new model starting from pre-trained ImageNet weights
-python surgery.py train --dataset=/home/.../mask_rcnn/samples/food/data/ --weights=imagenet
+python food.py train --dataset=/home/.../mask_rcnn/samples/food/data/ --weights=imagenet
 
 # Continue training the last model you trained. This will find
 # the last trained weights in the model directory.
-python surgery.py train --dataset=/home/.../mask_rcnn/samples/food/data/ --weights=last
+python food.py train --dataset=/home/.../mask_rcnn/samples/food/data/ --weights=last
 ```
 
 # Prediction, Visualization, Evaluation
