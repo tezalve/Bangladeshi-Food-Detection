@@ -13,15 +13,12 @@ Usage: import the module (see Jupyter notebooks for examples), or run from
 
     # Train a new model starting from pre-trained COCO weights
     python food.py train --dataset=E:/MRCNNM/samples/food/dataset --weights=coco
-    python food.py train --dataset=E:/MRCNNM/samples/food/alternate/dataset1.1 --weights=coco
-    python food.py train --dataset=E:/MRCNNM/samples/food/data --weights=coco
     
-
     # Resume training a model that you had trained earlier
-    python3 balloon.py train --dataset=/path/to/balloon/dataset --weights=last
+    python3 balloon.py train --dataset=/path/to/food/data --weights=last
 
     # Train a new model starting from ImageNet weights
-    python3 balloon.py train --dataset=/path/to/balloon/dataset --weights=imagenet
+    python3 balloon.py train --dataset=/path/to/food/data --weights=imagenet
 
     # Apply color splash to an image
     python3 balloon.py splash --weights=/path/to/weights/file.h5 --image=<URL or path to file>
