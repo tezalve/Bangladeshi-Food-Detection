@@ -1,6 +1,6 @@
 # Mask R-CNN for Bangladeshi Food
 
-This is a project of North South University Senior Project design under guidance of Mirza Mohammad Lutfe Elahi.
+This is a project of North South University Senior Project design under guidance of Mirza Mohammad Lutfe Elahi. This project was done using a dataset of 6500 annotated images (Collected Manually) of Bangladeshi food.
 
 The codes are based on implementation of Mask R-CNN by (https://github.com/matterport/Mask_RCNN) on Python 3, Keras, and TensorFlow. The model generates bounding boxes and segmentation masks for each instance of an object in the image. It's based on Feature Pyramid Network (FPN) and a ResNet101 backbone.
 
@@ -14,7 +14,7 @@ The repository includes:
 
 # Training on Your own Dataset
 
-Pre-trained weights from MS COCO and ImageNet are provided for you to fine-tune over new dataset. 
+Pre-trained weights from MS COCO and ImageNet are provided for you to fine-tune over new dataset. Sample Dataset is given
 
 In summary, to train the model you need to modify two classes in `food.py`:
 
