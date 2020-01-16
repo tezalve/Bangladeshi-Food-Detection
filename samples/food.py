@@ -12,7 +12,7 @@ Usage: import the module (see Jupyter notebooks for examples), or run from
        the command line as such:
 
     # Train a new model starting from pre-trained COCO weights
-    python food.py train --dataset=E:/MRCNNM/samples/food/dataset --weights=coco
+    python food.py train --dataset=/path/to/food/dataset --weights=coco
     
     # Resume training a model that you had trained earlier
     python3 balloon.py train --dataset=/path/to/food/data --weights=last
